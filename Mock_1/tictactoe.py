@@ -25,7 +25,7 @@ marked_count = [0, 0]
 last_player = 0
 is_full = True
 winning_lines = [0, 0]
-winning_positions = [[[0] * 3000 for _ in range(3000)] for _ in range(2)]
+winning_positions = [[[0] * 1000 for _ in range(1000)] for _ in range(2)]
 row_directions = [1, 1, 0, -1]
 col_directions = [0, 1, 1, 1]
 
