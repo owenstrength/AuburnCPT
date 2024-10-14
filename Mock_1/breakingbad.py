@@ -55,7 +55,7 @@ bad_combos = [tuple(data[i].split()) for i in range(n+2, n+2+m)]
 item_to_index = {item: idx for idx, item in enumerate(items)}
 
 graph = build_graph(n, item_to_index, bad_combos)
-#visualize_graph(graph)
+visualize_graph(graph)
 
 valid, groups = is_bipartite(graph, n, items)
 if valid:

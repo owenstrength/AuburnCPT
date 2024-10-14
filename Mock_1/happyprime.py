@@ -1,6 +1,3 @@
-from functools import lru_cache
-
-@lru_cache(maxsize=None)
 def is_prime(n):
         if n < 2:
             return False
@@ -9,11 +6,9 @@ def is_prime(n):
                 return False
         return True
 
-@lru_cache(maxsize=None)
 def sum_of_squares(n):
             return sum([int(i)**2 for i in str(n)])
 
-@lru_cache(maxsize=None)
 def is_happy(n):
         seen = set()
         while n != 1 and n not in seen:
@@ -21,7 +16,6 @@ def is_happy(n):
             n = sum_of_squares(n)
         return n == 1
 
-@lru_cache(maxsize=None)
 def is_happy_prime(num):
     return is_prime(num) and is_happy(num)
 
