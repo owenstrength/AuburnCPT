@@ -9,24 +9,22 @@ def find(parents, child):
     parents[child] = find(parents, parents[child])
     return parents[child]
 
-
-n, m = map(int, input().split())
-parents = {i: i for i in range(1, n + 1)}
+n,m = map(int, input().split())
+parents = {i:i for i in range(1,n+1)}
 
 for _ in range(m):
-    u, v = map(int, input().split())
-    union(parents, u, v)
+    a,b = map(int, input().split())
+    union(parents, a, b)
 
-connected = find(parents, 1) 
+unconnected = []
+for i in range(1,n+1):
+    if find(parents, i) != find(parents, 1):
+        unconnected.append(i)
 
-not_connected = []
-for house in range(1, n + 1):
-    if find(parents, house) != connected:
-        not_connected.append(house)
-
-if not_connected:
-    for house in sorted(not_connected):
-        print(house)
+unconnected.sort()
+if len(unconnected) > 0:
+    for i in unconnected:
+        print(i)
 else:
-    print("Connected")
+    print('Connected')
 
